@@ -1,5 +1,5 @@
-/* офлайн-кэш: версия 676fb2c5 (меняется вместе с содержимым приложения) */
-const V = 'tiempos-676fb2c5';
+/* офлайн-кэш: версия 79ba72af (меняется вместе с содержимым приложения) */
+const V = 'tiempos-79ba72af';
 const FILES = ['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'icon-180.png', 'icon-maskable-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(V).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
